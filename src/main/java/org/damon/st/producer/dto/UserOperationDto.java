@@ -1,18 +1,11 @@
 package org.damon.st.producer.dto;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 import lombok.*;
+import org.damon.st.producer.utils.UserOperation;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@JsonTypeInfo(
-        use = JsonTypeInfo.Id.NAME,
-        property = "type"
-)
-@JsonTypeName("userOperationDto")
 public class UserOperationDto {
-    private String operation;
+    private UserOperation operation;
     private UserDto user;
 }

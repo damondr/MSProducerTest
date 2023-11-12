@@ -4,20 +4,22 @@ server:
 # Rabbit configuration
 spring:
   rabbitmq:
-    host: '@spring.rabbitmq.host@'
-    port: '@spring.rabbitmq.port@'
-    username: '@spring.rabbitmq.username@'
-    password: '@spring.rabbitmq.password@'
-    virtual-host: '@spring.rabbitmq.virtual-host@'
+    host: 'spring.rabbitmq.host'
+    port: 'spring.rabbitmq.port'
+    username: 'spring.rabbitmq.username'
+    password: 'spring.rabbitmq.password'
+    virtual-host: 'spring.rabbitmq.virtual-host'
 
   sql:
     init:
       mode: never
 
   profiles:
-    active: "local"
+    active: 'local'
 
 app:
-  rabbitmq:
-    exchangeName: '@app.rabbitmq.exchangeName@'
-    routingKey: '@app.rabbitmq.routingKey@'
+  name: '${rootProject.name}'
+  version: '${project.version}'
+  rabbit:
+    exchange-name: 'app.rabbitmq.exchange-name'
+    routing-key: 'app.rabbitmq.routing-key'
