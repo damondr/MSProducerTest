@@ -1,0 +1,25 @@
+server:
+  port: 10001
+
+# Rabbit configuration
+spring:
+  rabbitmq:
+    host: 'spring.rabbitmq.host'
+    port: 'spring.rabbitmq.port'
+    username: 'spring.rabbitmq.username'
+    password: 'spring.rabbitmq.password'
+    virtual-host: 'spring.rabbitmq.virtual-host'
+
+  sql:
+    init:
+      mode: never
+
+  profiles:
+    active: 'local'
+
+app:
+  name: '${rootProject.name}'
+  version: '${project.version}'
+  rabbit:
+    exchange-name: 'app.rabbitmq.exchange-name'
+    routing-key: 'app.rabbitmq.routing-key'
